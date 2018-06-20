@@ -1,0 +1,29 @@
+<html>
+
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='res.css') }}">
+	</head>
+
+<body>
+		<form action="/login" mwethod="post">
+			<button type="submit">LogOut</button></form>
+<h1> Edit Company </h1>
+
+
+<form action="{{ url_for('editCompany',item_id = thing.id)}}" method = 'post'>
+
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder = '{{thing.name }}'>
+
+
+<input type='submit' value='Edit'>
+
+
+<a href = '{{url_for('showCompany')}}'> Cancel </a>
+
+</form>
+</body>
+
+</html>

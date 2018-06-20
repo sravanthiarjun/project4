@@ -1,0 +1,29 @@
+
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='res.css') }}">
+	</head>
+
+
+<body><form action="/login" mwethod="post">
+		<button type="submit">Login</button></form>
+<div class = 'pane'>
+<h1>Item Catalog for Electronic Gadgets</h1>
+<a href="{{url_for('newCompany')}}" > <h3> Create a New Company</h3> </a>
+
+{% for companies in thing %}
+
+
+
+<a href = "{{url_for('showMenu', item_id = companies.id)}}"> <p>{{companies.name}}</p></a>
+
+<p><a href = "{{url_for('editCompany',item_id = companies.id)}}">Edit Company</a></p>
+
+<p> <a href = "{{url_for('deleteCompany',item_id = companies.id)}}">Delete Company</a> </p>
+{% endfor %}
+</div>
+
+</body>
+
+</html>

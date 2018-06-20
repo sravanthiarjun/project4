@@ -1,0 +1,55 @@
+<html>
+	
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='res.css') }}">
+	</head>
+	<body>
+			
+		<div class = 'pane'>
+
+		
+		{% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% if items !=[] %}
+
+		<a href = "{{url_for('newMenuItem', item_id = thing.id )}}">Create New Item</a>
+	</br></br>
+
+		{% for i in items %}
+
+		<p>{{i.name}}</p>
+	
+
+		<p>{{i.description}}</p>
+	
+
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editMenuItem', item_id = thing.id, menu_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteMenuItem', item_id = thing.id, menu_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+		{% endfor %}
+		{% else %}
+		<p> You currently have no menu items. <p>
+		<a href = "{{url_for('newMenuItem', item_id = thing.id )}}">Create New Item</a>
+			{% endif %}
+</div>
+<script>
+		function logout(){
+			window.location='login.html';
+		}
+	</script>
+	</body>
+
+</html>

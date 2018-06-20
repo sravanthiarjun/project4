@@ -1,0 +1,19 @@
+body{
+}
+h1{
+    color:green;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightpink;
+}
+button{
+    background-color:greenyellow;
+    float:right;
+    color:red;
+    padding:5px;
+    font-size:20px;
+}
+.pane{
+    background-color: lightgoldenrodyellow;
+    border:2px solid darkmagenta;
+    text-align: center;
+}
