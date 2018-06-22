@@ -5,8 +5,6 @@ from flask import redirect
 from flask import jsonify
 from flask import url_for
 from flask import flash
-
-
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Company, Gadgets, User
